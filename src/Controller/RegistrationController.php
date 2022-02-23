@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Entity\User;
+use App\Entity\Participant;
 use App\Form\RegistrationFormType;
 use App\Security\AppAuthentification;
 use Doctrine\ORM\EntityManagerInterface;
@@ -20,25 +20,25 @@ class RegistrationController extends AbstractController
      */
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, UserAuthenticatorInterface $userAuthenticator, AppAuthentification $authenticator, EntityManagerInterface $entityManager): Response
     {
-        $user = new User();
-        $form = $this->createForm(RegistrationFormType::class, $user);
+        $participant = new Participant();
+        $form = $this->createForm(RegistrationFormType::class, $participant);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             // encode the plain password
-            $user->setPassword(
+            $participant->setPassword(
             $userPasswordHasher->hashPassword(
-                    $user,
+                    $participant,
                     $form->get('Mot_de_passe')->getData()
                 )
             );
 
-            $entityManager->persist($user);
+            $entityManager->persist($participant);
             $entityManager->flush();
             // do anything else you need here, like send an email
 
             return $userAuthenticator->authenticateUser(
-                $user,
+                $participant,
                 $authenticator,
                 $request
             );
