@@ -42,6 +42,12 @@ class AppAuthentification extends AbstractLoginFormAuthenticator
             ]
         );
     }
+    public function supports(Request $request) : bool
+    {
+        return self::LOGIN_ROUTE === $request->attributes->get('_route')
+            && $request->isMethod('POST');
+    }
+
 
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $firewallName): ?Response
     {
@@ -59,8 +65,8 @@ class AppAuthentification extends AbstractLoginFormAuthenticator
         return $this->urlGenerator->generate(self::LOGIN_ROUTE);
     }
 
-//    public function getPassword(): string
-//    {
-//
-//    }
+    public function getPassword(): string
+    {
+
+    }
 }
