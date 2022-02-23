@@ -7,9 +7,16 @@ font-family: 'Syncopate', sans-serif;
 */
 
 body{
+    text-align: center;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
+    background-color: cadetblue;
+    color: white;
 }
 label{
     display:block;
+    margin-top: 15px;
+}
+.btn-login{
+    margin-top: 25px;
 }

@@ -8,6 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class MonCompteController extends AbstractController
 
 {
+
     /**
      * @Route("/monCompte", name="main_monCompte")
      */
