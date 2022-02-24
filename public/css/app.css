@@ -5,18 +5,177 @@ font-family: 'Poppins', sans-serif;
 font-family: 'Prompt', sans-serif;
 font-family: 'Syncopate', sans-serif;
 */
-
-body{
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-    background-color: cadetblue;
-    color: white;
+.acceuil{
+    animation-name: acceuil;
+    animation-duration: 6s;
+    opacity:0;
+    height: 400px;
 }
-label{
-    display:block;
-    margin-top: 15px;
+.bandeau{
+    display: flex;
+    justify-content:space-between ;
+    padding: 15px 15px 15px 15px;
+    background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(12,27,73,1) 100%);
+
+}
+.bandeauNav{
+    background-color : rgba(255, 255, 255, 0);
+}
+.opacity{
+    text-align: center;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 400;
+    background-color: rgba(0,0,0,0)
 }
 .btn-login{
-    margin-top: 25px;
+    margin: 25px 0 25px 0;
+    background-color: #378d01;
+    color: white;
 }
+.centerZ{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.divLogoBandeau{
+    width: 20%;
+}
+footer{
+    font-family: 'Syncopate', sans-serif;
+    font-weight: 600;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    line-height: 40px;
+    bottom: 0px;
+    background-color: white;
+}
+
+header{
+    padding: 15px 0 15px 0;
+    animation-name: bandeau;
+    animation-duration: 6s;
+}
+html{
+    background-image: url("../img/acceuil.gif");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.inputLog{
+    width: 25%;
+    padding: 5px;
+}
+.logoBandeau{
+    width: 50%;
+}
+.divLogoBandeau h3{
+    color: whitesmoke;
+    font-family: 'Lobster', cursive;
+}
+.logoPageAcceuil{
+    width: 20%;
+    margin-top: 80px;
+}
+main{
+    text-align: center;
+    font-family: 'Prompt', sans-serif;
+    margin-top: 30px;
+
+    background-color: rgba(0,0,0,0.9);
+    height: 600px;
+}
+main h1{
+    color: white;
+}
+.main{
+    text-align: center;
+    font-family: 'Prompt', sans-serif;
+    margin-top: 30px;
+
+
+}
+main label{
+    display:block;
+    margin: 20px 0 0px 0;
+    color: white;
+}
+.msgBienvenue{
+    font-family: 'Lobster', cursive;
+    margin:25px 0 40px 0;
+    font-size: 50px;
+    color: white;
+}
+nav{
+    display: flex;
+    flex-direction: row;
+}
+nav a{
+    text-decoration: none;
+    color: whitesmoke;
+    font-family: 'Prompt', sans-serif;
+}
+nav a:hover{
+    text-decoration: underline #ffffff;
+    color: #ffc002;
+    transition: 1s;
+}
+nav li{
+    list-style: none;
+    margin-right: 10px;
+    font-size: 1.5rem;
+}
+.separation{
+    border-color: white;
+}
+.spanColor{
+    color: #ffc002;
+}
+.translatAcceuil{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: white;
+    z-index:10;
+}
+.translatAcceuil img{
+    width: 25%;
+}
+.utilConnecter{
+    display: flex;
+    justify-content: right;
+    padding-right: 40px;
+    color: whitesmoke;
+}
+.utilConnecter a{
+    color: whitesmoke;
+}
+.utilConnecter a:hover{
+    color: #01ffc3;
+    transition: 1s;
+}
+
+
+
+
+
+
+
+@keyframes acceuil {
+    0% {
+        opacity:1;
+    }
+    40% {
+        opacity:1;
+    }
+    100% {
+        opacity:0;
+    }
+
+}
+
+
+

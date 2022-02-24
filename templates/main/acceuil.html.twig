@@ -1,7 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %} ACCEUIL {% endblock %}
+{% block title %} Acceuil {% endblock %}
 
 {% block body %}
-    <h1>Page Acceuil</h1>
+    <div class="acceuil">
+        <img class="logoPageAcceuil" src="{{ asset('img/logo-site-3r.png') }}" alt="logoSiteR3">
+        <h1 class="msgBienvenue">- Vous souhaite la Bienvenue - </h1>
+    </div>
+
 {% endblock %}

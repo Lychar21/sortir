@@ -1,24 +1,20 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Page d'identification{% endblock %}
+{% block title %}Se connecter{% endblock %}
 
 {% block body %}
-<form method="post">
+<form method="post" class="main">
     {% if error %}
         <div class="alert alert-danger">Identifiant ou Mot de passe incorrect</div>
     {% endif %}
 
-    {% if app.user %}
-        <div class="mb-3">
-            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
-        </div>
-    {% endif %}
-
-    <h1 class="h3 mb-3 font-weight-normal">Identifiez-Vous</h1>
+    <hr class="separation">
+    <h1>Identifiez-Vous</h1>
+    <hr class="separation">
     <label for="inputEmail">Email</label>
-    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+    <input type="email" value="{{ last_username }}" name="email" id="inputEmail " class="inputLog" autocomplete="email" required autofocus>
     <label for="inputPassword">Mot de passe</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+    <input type="password" name="password" id="inputPassword" class=" inputLog" autocomplete="current-password" required>
 
     <input type="hidden" name="_csrf_token"
            value="{{ csrf_token('authenticate') }}"
@@ -34,7 +30,7 @@
             </label>
         </div>
 </br>
-    <button class="btn btn-lg btn-primary btn-login" type="submit">
+    <button class="btn btn-lg btn-login" type="submit">
         Valider
     </button>
 </form>

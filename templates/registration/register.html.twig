@@ -3,11 +3,13 @@
 {% block title %}Créer Un Compte{% endblock %}
 
 {% block body %}
+    <hr class="separation">
     <h1>Créer un Compte</h1>
+    <hr class="separation">
 
     {{ form_start(registrationForm) }}
-        {{ form_widget(registrationForm) }}
+    {{ form_widget(registrationForm) }}
 
-        <button type="submit" class="btn btn-login">Créer</button>
+        <button type="submit" class="btn btn-lg  btn-login">Créer un Compte</button>
     {{ form_end(registrationForm) }}
 {% endblock %}
