@@ -60,6 +60,21 @@ class Participant implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $actif;
 
+    /**
+     * @ORM\Column(type="string", length=30, nullable=true)
+     */
+    private $pseudo;
+
+    /**
+     * @ORM\Column(type="array", nullable=true)
+     */
+    private $photo = [];
+
+    /**
+     * @ORM\Column(type="string", length=50, nullable=true)
+     */
+    private $campus;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -205,6 +220,42 @@ class Participant implements UserInterface, PasswordAuthenticatedUserInterface
     public function setActif(?bool $actif): self
     {
         $this->actif = $actif;
+
+        return $this;
+    }
+
+    public function getPseudo(): ?string
+    {
+        return $this->pseudo;
+    }
+
+    public function setPseudo(?string $pseudo): self
+    {
+        $this->pseudo = $pseudo;
+
+        return $this;
+    }
+
+    public function getPhoto(): ?array
+    {
+        return $this->photo;
+    }
+
+    public function setPhoto(?array $photo): self
+    {
+        $this->photo = $photo;
+
+        return $this;
+    }
+
+    public function getCampus(): ?string
+    {
+        return $this->campus;
+    }
+
+    public function setCampus(?string $campus): self
+    {
+        $this->campus = $campus;
 
         return $this;
     }
