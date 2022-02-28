@@ -11,6 +11,10 @@ font-family: 'Syncopate', sans-serif;
     opacity:0;
     height: 400px;
 }
+.justify-content-center{
+    display: flex;
+    align-items: center;
+}
 .bandeau{
     display: flex;
     justify-content:space-between ;
@@ -21,25 +25,72 @@ font-family: 'Syncopate', sans-serif;
 }
 .bandeauNav{
     background-color : rgba(255, 255, 255, 0);
+}.bloc-btn-login{
+     display: flex;
+     justify-content: space-evenly;
+ }
+.bloc-btn-register{
+    display: flex;
+    justify-content: space-evenly;
 }
-.opacity{
-    text-align: center;
-    font-family: 'Prompt', sans-serif;
-    font-weight: 400;
-    background-color: rgba(0,0,0,0)
+.btnMonCompte{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
 }
 .btn-login{
     margin: 25px 0 25px 0;
     background-color: #378d01;
     color: white;
+    margin: 40px 15px 0 15px ;
+    width: 150px;
+    height: 50px;
+}
+.btn-register{
+    background-color: #378d01;
+    color: white;
+    margin: 40px 15px 0 15px ;
+    width: 150px;
+    height: 50px;
+}
+.btn-modif{
+    background-color: #378d01;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 40px 15px 0 15px ;
+    width: 150px;
+    height: 50px;
 }
 .centerZ{
     display:flex;
     flex-direction: column;
     justify-content: center;
 }
+.detailUtilisateur{
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start ;
+    list-style: none;
+    padding: 0;
+    color: white;
+}
+.detailUtilisateur li{
+    margin-top: 20px;
+}
 .divLogoBandeau{
     width: 20%;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.formModif{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 footer{
     font-family: 'Syncopate', sans-serif;
@@ -63,12 +114,15 @@ html{
     background-repeat: no-repeat;
     background-size: cover;
 }
+h5{
+    color: orange;
+}
 .inputLog{
     width: 25%;
     padding: 5px;
 }
 .logoBandeau{
-    width: 50%;
+    width: 30%;
 }
 .divLogoBandeau h3{
     color: whitesmoke;
@@ -82,24 +136,33 @@ main{
     text-align: center;
     font-family: 'Prompt', sans-serif;
     margin-top: 30px;
-
     background-color: rgba(0,0,0,0.9);
-    height: 600px;
+    height: 700px;
 }
 main h1{
     color: white;
+}
+main h4{
+    color: white;
+    margin: 0;
+    text-decoration: underline;
 }
 .main{
     text-align: center;
     font-family: 'Prompt', sans-serif;
     margin-top: 30px;
-
-
 }
 main label{
     display:block;
     margin: 20px 0 0px 0;
     color: white;
+}
+.monCompte{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
 }
 .msgBienvenue{
     font-family: 'Lobster', cursive;
@@ -115,19 +178,50 @@ nav a{
     text-decoration: none;
     color: whitesmoke;
     font-family: 'Prompt', sans-serif;
+    margin-right: 15px;
 }
 nav a:hover{
     text-decoration: underline #ffffff;
     color: #ffc002;
     transition: 1s;
 }
+.nav-ul{
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+}
 nav li{
     list-style: none;
     margin-right: 10px;
     font-size: 1.5rem;
 }
+.opacity{
+    text-align: center;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 400;
+    background-color: rgba(0,0,0,0)
+}
+.oubliMdp{
+    margin-top: 20px;
+}
+.rechercher{
+    display: flex;
+    flex-direction: row;
+}
+#registration_form{
+    margin-bottom: 10px;
+}
 .separation{
     border-color: white;
+}
+.small{
+    color: #ffc002;
+    padding: 15px 0 30px 0;
+
+}
+.small h6{
+    line-height: px;
 }
 .spanColor{
     color: #ffc002;
@@ -143,6 +237,15 @@ nav li{
 }
 .translatAcceuil img{
     width: 25%;
+}
+#update_form{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+#update_form_photo{
+    margin-bottom: 25px;
 }
 .utilConnecter{
     display: flex;

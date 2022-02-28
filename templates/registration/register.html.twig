@@ -6,10 +6,16 @@
     <hr class="separation">
     <h1>Créer un Compte</h1>
     <hr class="separation">
+    <div class="col-xl-12 formModif">
+        <div class="col-xl-4 ">
+            {{ form_start(registrationForm) }}
+            {{ form_widget(registrationForm) }}
+            <div class=" bloc-btn-register">
+                <button type="submit" class=" btn btn-lg  btn-register">Créer</button>
+                <a href="{{ path('main_acceuil') }}"><button type="button" style="background-color: crimson" class=" btn btn-lg  btn-register">Annuler</button></a>
+            </div>
+            {{ form_end(registrationForm) }}
+        </div>
+    </div>
 
-    {{ form_start(registrationForm) }}
-    {{ form_widget(registrationForm) }}
-
-        <button type="submit" class="btn btn-lg  btn-login">Créer un Compte</button>
-    {{ form_end(registrationForm) }}
 {% endblock %}

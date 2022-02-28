@@ -6,7 +6,7 @@
         {# FAVICON #}
         <link rel="icon" href="img/favicon.png">
         {# Lien Fichiers Css #}
-        <link href="css/app.css" rel="stylesheet">
+        <link href="{{ asset('css/Styles.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 
 
@@ -33,7 +33,7 @@
                 <div>
                     {% if app.user %}
                         <div class="mb-3 utilConnecter">
-                            Vous êtes connecté avec l'adresse &nbsp;<span class="spanColor">{{ app.user.email }}</span>&nbsp;| &nbsp; <a href="{{ path('app_logout') }}"> Se déconnecter</a>
+                            Vous êtes connecté avec le compte &nbsp<a href="{{ path('mon_compte_details') }}"><span class="spanColor">{{ app.user.pseudo }}</span></a>&nbsp;| &nbsp; <a href="{{ path('app_logout') }}"> Se déconnecter</a>
                         </div>
                     {% endif %}
                 </div>
@@ -43,23 +43,23 @@
                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
-                            <div class="collapse navbar-collapse " id="navbarSupportedContent">
-                                <ul class="navbar-nav  mb-2 mb-lg-0 ">
-                                    <li class="nav-item ">
-                                        <a class="nav-link active"  aria-current="page" href="{{ path('main_acceuil')}}">Acceuil</a>
-                                    </li>
-                                    <li class="hover">
-                                        <a class="nav-link "  href="{{ path('app_register') }}">S'enregistrer</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link"  href="{{ path('app_login') }}">Se connecter</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link"  href="{{ path('main_acceuil') }}">Créer activité</a>
-                                    </li>
+                            <div class="collapse navbar-collapse nav" id="navbarSupportedContent">
+                                <ul class="nav-ul">
 
+                                    {% if app.user %}{# page non accesible seulement en étant connceter et selon le role #}
+                                    <li><a href="{{ path('mon_compte_details' ) }}" title="monCompte">Mon compte</a></li>
+                                    <li><a href="{{ path('main_acceuil') }}" title="Accueil">Accueil</a></li>
+                                    {% if is_granted("ROLE_ADMIN") %}
+                                    <li><a href="{{ path('admin_dashboard') }}" title="Liste des utilisateurs">Gérer Utilisateurs</a></li>
+                                    <li><a href="{{ path('admin_dashboard') }}" title="Liste des sorties">Gérer Sorties</a></li>
+                                    {% endif %}
+                                    {% else %}
+                                    <li><a href="{{ path('main_acceuil') }}" title="Accueil">Accueil</a></li>
+                                    <li><a href="{{ path('app_login') }}" title="Se connecter">Se connecter</a></li>
+                                    <li><a href="{{ path('app_register') }}" title="Créer un compte">Créer un compte</a></li>
+                                    {% endif %}
                                 </ul>
-                                <form class="d-flex">
+                                <form class=" rechercher">
                                     <input class="form-control me-2" type="search" placeholder="Entrez un mot clé..." aria-label="Search">
                                     <button class="btn btn-outline-success" type="submit">Rechercher</button>
                                 </form>

@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %} Details{% endblock %}
+
+{% block body %}
+    <hr class="separation">
+    <h1>Mon Compte</h1>
+    <hr class="separation">
+    <h4>Détails</h4>
+    {% if app.user %}
+
+<form action="modifier.html.twig" method="get">
+    <div class="col-xl-12  monCompte">
+
+        <div class="col-xl-3 ">
+            <img class="img-thumbnail" src="{{ asset('img/photodeprofil.jpg') }}" alt="Photo de profil" style="width:200px;height:200px;">
+        </div>
+        <div class="col-xl-3" >
+            <ul class="detailUtilisateur">
+                <li><h5>Votre Nom: <span class="spanColor">{{ app.user.nom}}</span>&nbsp;</h5></li>
+                <li><h5>Votre Prénom : <span class="spanColor">{{ app.user.prenom}}</span>&nbsp;</h5></li>
+                <li><h5>Votre Pseudo : <span class="spanColor">{{ app.user.pseudo}}</span>&nbsp;</h5></li>
+                <li><h5>Votre Téléphone : <span class="spanColor">{{ app.user.telephone}}</span>&nbsp;</h5></li>
+                <li><h5>Votre Email : <span class="spanColor">{{ app.user.email}}</span>&nbsp;</h5></li>
+                <li><h5>Votre Campus : <span class="spanColor">{{ app.user.campus}}</span>&nbsp;</h5></li>
+                <li><h5>Votre Identifiant : <span class="spanColor">{{ app.user.id}}</span>&nbsp;</h5></li>
+            </ul>
+        </div>
+    </div>
+</form>
+    <div class="justify-content-center">
+        <div class="col-xl-4 btnMonCompte">
+            <a href="{{ path('mon_compte_modifier')}}"> <button class="btn btn-lg btn-login"> Modifier </button></a>
+            <a href="{{ path('main_acceuil') }}" ><button class="btn btn-lg btn-login" style="background-color: crimson">Annuler</button></a>
+        </div>
+    </div>
+    {% endif %}
+{% endblock %}
