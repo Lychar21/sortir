@@ -6,7 +6,7 @@
         {# FAVICON #}
         <link rel="icon" href="img/favicon.png">
         {# Lien Fichiers Css #}
-        <link href="{{ asset('css/Styles.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/Style.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 
 
@@ -33,7 +33,7 @@
                 <div>
                     {% if app.user %}
                         <div class="mb-3 utilConnecter">
-                            Vous êtes connecté avec le compte &nbsp<a href="{{ path('mon_compte_details') }}"><span class="spanColor">{{ app.user.pseudo }}</span></a>&nbsp;| &nbsp; <a href="{{ path('app_logout') }}"> Se déconnecter</a>
+                            Vous êtes connecté avec le compte &nbsp<a href="{{ path('mon_compte_details',{'id':app.user.id}) }}"><span class="spanColor">{{ app.user.pseudo }}</span></a>&nbsp;| &nbsp; <a href="{{ path('app_logout') }}"> Se déconnecter</a>
                         </div>
                     {% endif %}
                 </div>
@@ -47,7 +47,7 @@
                                 <ul class="nav-ul">
 
                                     {% if app.user %}{# page non accesible seulement en étant connceter et selon le role #}
-                                    <li><a href="{{ path('mon_compte_details' ) }}" title="monCompte">Mon compte</a></li>
+                                    <li><a href="{{ path('mon_compte_details',{'id':app.user.id}) }}" title="monCompte">Mon compte</a></li>
                                     <li><a href="{{ path('main_acceuil') }}" title="Accueil">Accueil</a></li>
                                     {% if is_granted("ROLE_ADMIN") %}
                                     <li><a href="{{ path('admin_dashboard') }}" title="Liste des utilisateurs">Gérer Utilisateurs</a></li>

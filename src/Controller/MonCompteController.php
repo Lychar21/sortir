@@ -17,16 +17,16 @@ use Symfony\Component\Security\Http\Authentication\UserAuthenticatorInterface;
 class MonCompteController extends AbstractController
 {
     /**
-     * @Route("/compte", name="mon_compte_details")
+     * @Route("/compte/{id}", name="mon_compte_details")
      */
-    public function details(): Response
+    public function details(Participant $participant): Response
     {
         return $this->render('mon_compte/details.html.twig');
     }
 
 
     /**
-     * @Route("/compte/modifier", name="mon_compte_modifier")
+     * @Route("/compte/modifier/{id}", name="mon_compte_modifier")
      * @param Request $request
      * @param UserPasswordHasherInterface $userPasswordHasher
      * @param UserAuthenticatorInterface $userAuthenticator
@@ -34,9 +34,9 @@ class MonCompteController extends AbstractController
      * @param EntityManagerInterface $entityManager
      * @return Response
      */
-    public function modifier(Request $request, UserPasswordHasherInterface $userPasswordHasher, UserAuthenticatorInterface $userAuthenticator, AppAuthentification $authenticator, EntityManagerInterface $entityManager): Response
+    public function modifier(Request $request, UserPasswordHasherInterface $userPasswordHasher, UserAuthenticatorInterface $userAuthenticator, AppAuthentification $authenticator, EntityManagerInterface $entityManager,Participant $participant): Response
     {
-        $participant = new Participant();
+//        $participant = new Participant();
         $participant->setRoles(['ROLE_USER']);
         $form = $this->createForm(UpdateFormType::class, $participant);
         $form->handleRequest($request);

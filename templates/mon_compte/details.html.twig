@@ -31,7 +31,7 @@
 </form>
     <div class="justify-content-center">
         <div class="col-xl-4 btnMonCompte">
-            <a href="{{ path('mon_compte_modifier')}}"> <button class="btn btn-lg btn-login"> Modifier </button></a>
+            <a href="{{ path('mon_compte_modifier',{'id':app.user.id})}}"> <button class="btn btn-lg btn-login"> Modifier </button></a>
             <a href="{{ path('main_acceuil') }}" ><button class="btn btn-lg btn-login" style="background-color: crimson">Annuler</button></a>
         </div>
     </div>
