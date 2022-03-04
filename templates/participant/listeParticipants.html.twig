@@ -1,11 +1,40 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}Liste Utilisateurs{% endblock %}
+
 {% block body %}
+    <hr class="separation">
+    <h1>Liste des Utilisateurs</h1>
+    <hr class="separation">
+<form>
+    <table class="col-xl-8 bloc-participants">
+        <tr class="legende-participants">
+            <td style="width:100px">Id</td>
+            <td style="width:150px">Nom</td>
+            <td style="width:150px">Prénom</td>
+            <td style="width:150px">Pseudo</td>
+            <td style="width:280px">Email</td>
+            <td style="width:150px">Téléphone</td>
+            <td style="width:230px; border-color: transparent"></td>
+
+        </tr>
+        {% for participant in participants %}
+            <tr class="list-participants">
+                     <td style="width:100px"><span class="spanColor" >{{participant.id}}</span></td>
+                     <td style="width:150px">{{participant.nom}}</td>
+                     <td style="width:150px">{{participant.prenom}}</td>
+                     <td style="width:150px">{{participant.pseudo}}</td>
+                     <td style="width:280px">{{participant.email}}</td>
+                     <td style="width:150px">{{participant.telephone}}</td>
+                     <td class="btn-modifier-liste-participants" style="width:100px;border-color:transparent"><input type="button" value="Modifier"></td>
+                     <td class="btn-supprimer-liste-participants" style="width:130px;border-color:transparent"><input type="button" value="Supprimer"></td>
+            </tr>
+        {% endfor %}
+    </table>
+</form>
+
 
 {% endblock %}
 
-{% block title %}
 
-
-{% endblock %}
 

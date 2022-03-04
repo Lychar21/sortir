@@ -28,25 +28,39 @@ font-family: 'Syncopate', sans-serif;
 }.bloc-btn-login{
      display: flex;
      justify-content: space-evenly;
- }
+}
 .bloc-btn-register{
     display: flex;
     justify-content: space-evenly;
+}
+.bloc-participants{
+    margin: auto;
+    border-collapse: collapse;
 }
 .btnMonCompte{
     display: flex;
     justify-content: space-evenly;
     margin-top: 10px;
 }
+
+.btn-modifier-liste-participants input{
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    margin: auto;
+    background-color: green;
+    color: white;
+    border-color: transparent;
+}
+.btn-modifier-liste-participants input:hover {
+    opacity: 0.5;
+
+}
 .btn-login{
     margin: 25px 0 25px 0;
-    background-color: #378d01;
-    color: white;
-    margin: 40px 15px 0 15px ;
-    width: 150px;
-    height: 50px;
-}
-.btn-register{
     background-color: #378d01;
     color: white;
     margin: 40px 15px 0 15px ;
@@ -63,6 +77,29 @@ font-family: 'Syncopate', sans-serif;
     width: 150px;
     height: 50px;
 }
+.btn-register{
+    background-color: #378d01;
+    color: white;
+    margin: 40px 15px 0 15px ;
+    width: 150px;
+    height: 50px;
+}
+.btn-supprimer-liste-participants input{
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    margin: auto;
+    background-color: crimson;
+    color: white;
+    border-color: transparent;
+}
+.btn-supprimer-liste-participants input:hover {
+    opacity: 0.5;
+}
+
 .centerZ{
     display:flex;
     flex-direction: column;
@@ -122,6 +159,40 @@ h5{
     width: 25%;
     padding: 5px;
 }
+.list-participants {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+.legende-participants{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin:40px 0 15px 0;
+}
+.legende-participants td{
+    color: white;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 200px;
+    text-align: left;
+    border: 1px solid #ffc002;
+}
+.list-participants td{
+    display: flex;
+    align-items: center;
+    color: white;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 200px;
+    text-align: left;
+    border: 1px solid white;
+
+}
 .logoBandeau{
     width: 30%;
 }
@@ -141,7 +212,8 @@ main{
     height: 700px;
 }
 main h1{
-    color: white;
+    color: #ffc002;
+    font-size: 2rem;
 }
 main h4{
     color: white;
@@ -222,7 +294,7 @@ nav li{
 
 }
 .small h6{
-    line-height: px;
+    line-height: 5px;
 }
 .spanColor{
     color: #ffc002;

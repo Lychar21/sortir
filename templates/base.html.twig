@@ -6,7 +6,7 @@
         {# FAVICON #}
         <link rel="icon" href="img/favicon.png">
         {# Lien Fichiers Css #}
-        <link href="{{ asset('css/Style.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/style.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 
 
@@ -26,7 +26,8 @@
 
         <div class="bandeau">
             <div class="divLogoBandeau">
-                <img class="logoBandeau" src="{{ asset('img/logo-site-3r.png') }}" alt="logoSiteR3">
+                <a href="{{ path('main_acceuil') }}" title="Accueil"><img class="logoBandeau" src="{{ asset('img/logo-site-3r.png') }}" alt="logoSiteR3"></a>
+
                 <h3>Laissez parler vos envies</h3>
             </div>
             <div class="centerZ">
@@ -50,7 +51,7 @@
                                     <li><a href="{{ path('mon_compte_details',{'id':app.user.id}) }}" title="monCompte">Mon compte</a></li>
                                     <li><a href="{{ path('main_acceuil') }}" title="Accueil">Accueil</a></li>
                                     {% if is_granted("ROLE_ADMIN") %}
-                                    <li><a href="{{ path('admin_dashboard') }}" title="Liste des utilisateurs">Gérer Utilisateurs</a></li>
+                                    <li><a href="{{ path('admin_participant') }}" title="Liste des utilisateurs">Gérer Utilisateurs</a></li>
                                     <li><a href="{{ path('admin_dashboard') }}" title="Liste des sorties">Gérer Sorties</a></li>
                                     {% endif %}
                                     {% else %}

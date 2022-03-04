@@ -2,6 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\Participant;
+use App\Repository\ParticipantRepository;
+use http\Env\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -14,10 +17,27 @@ class AdminController extends AbstractController
     /**
      * @Route("/dashboard", name="dashboard")
      */
-    public function index(): Response
+    public function dashboard(): Response
     {
-        return $this->render('admin/pageAdmin.html.twig', [
-            'controller_name' => 'AdminController',
-        ]);
+        if ($this->isGranted('ROLE_ADMIN'))
+        {
+            return $this->render('admin/pageAdmin.html.twig', [
+                'controller_name' => 'AdminController',
+            ]);
+        }
+    }
+
+    /**
+     * @Route("/listeParticipant", name="participant")
+     */
+    public function listeParticipant(ParticipantRepository $participantRepository): Response
+    {
+        $participants = $participantRepository->findAll();
+
+
+            return $this->render('participant/listeParticipants.html.twig', [
+                "participants" => $participants
+            ]);
+
     }
 }

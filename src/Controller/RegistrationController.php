@@ -36,6 +36,9 @@ class RegistrationController extends AbstractController
 
             $entityManager->persist($participant);
             $entityManager->flush();
+            $this->addFlash('success', 'Compte créé !');
+            return $this->redirectToRoute('main_acceuil',['id' => $participant->getId()]);
+
             // do anything else you need here, like send an email
 
             return $userAuthenticator->authenticateUser(
@@ -44,8 +47,7 @@ class RegistrationController extends AbstractController
                 $request,
 
             );
-            $this->addFlash('success', 'Compte créé !');
-            return $this->redirectToRoute('main_acceuil',['id' => $participant->getId()]);
+
         }
 
         return $this->render('registration/register.html.twig', [
